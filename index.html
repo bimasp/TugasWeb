@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOTD</title>
+   <style>
+       *{
+           box-sizing: border-box;
+       }
+       body { 
+           font-family: Arial, Helvetica, sans-serif;
+           -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 960px;
+            margin:0 auto;
+            padding: 0 auto;
+            font-size: 100%;
+            overflow: auto;
+            background-image:url('./Gambar/bground.jpg');
+       }
+       /* kotak bagian navbar */
+       .navbar {
+           background-color: rgb(255, 253, 109);
+           padding: 5px;
+           position: sticky;
+           top: 0;
+       }
+       /* bagian nav a  */
+        #navA{ 
+           text-decoration: none;
+           color: black;
+        }
+        /* bagian nav list */
+       .navbar ul li {
+           display: inline;
+           list-style-type: none;
+           font-size: 18px;
+           margin-right: 20px;  
+           padding: 21px;
+       }
+       input {
+           float: right;
+           padding: 10px;
+           margin-bottom: 20px;
+           margin-right: 10px;   
+       }
+       .navbar a:hover {
+           font-weight: bolder;
+           font-weight: 900;
+           color: black;
+           background-color: rgb(219, 218, 127);
+           padding: 21px;
+       }
+       /* warna navbar */
+       .listNav1 {background-color: rgb(255, 253, 109);}
+       .listNav2{background-color: rgb(255, 253, 109);}
+       .listNav3{background-color: rgb(255, 253, 109);}
+
+       #pencarian {
+           float: right;
+       }
+       #jumbotron { 
+           font-size: 20px;
+           padding: 3px;
+           background-color:none;
+           text-align: center;
+           top: 0;
+       }
+       #jumbotron a {
+           font-weight: 1000px;
+           text-decoration: none;
+           color: rgb(0, 0, 0);
+           margin: auto;
+       }
+       #jumbotron a:hover {
+            font-weight: bolder;
+            font-weight: 900;
+            background-color: none;
+            color: none;
+       }
+       .background {
+           background-color: none;
+           border: 5px black;
+           padding: 1em;
+       }
+       /* Judul artikle Galery*/
+       .kotakG {
+            width: 100%;
+            max-width: 960px;
+            background-color: rgb(243, 110, 86);
+            color: white;
+            padding-left: 20px;
+            position:sticky;
+            top: 0;
+       }
+       /*  Judul artikel About web */
+       .KotakA {
+            width: 100%;
+            max-width: 960px;
+            background-color: rgb(243, 110, 86);
+            color: white;
+            padding-left: 20px;
+            position:sticky;
+            top: 0;
+       }
+       #aboutWeb {
+           width: 70%;
+           float: left;
+           color :rgb(0, 0, 0);
+           margin-bottom:30px;
+           border-bottom: 5px solid rgb(243, 110, 86);
+       }
+       .textIndent {
+           text-indent: 60px;
+           text-align: justify;
+       }
+       #asideArtikel {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 30%;
+            float: right;
+            padding-left: 20px;
+        }
+        #asideArtikel:hover {
+            border:1px solid #555;
+            border-radius:5px;
+           
+        }
+        .potoBio img {
+            height: 166px;
+           width: 155px;
+           margin: 5px;
+        }
+        .aside h1 {
+            background-color: rgb(243, 110, 86);
+            padding: 10px;
+            color: white;
+            margin: auto;
+        }
+        .aside  ul li {
+            list-style-type: none;
+        }
+        .aside ul li a {
+            text-decoration: none;
+            color: black;
+        }
+        .bio {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            font-weight: bold;
+        }
+       #main {
+           padding: 20px;
+       }
+       
+       /* bagian container flex */
+       .container {
+            background:none;
+            display: flex;
+            flex-direction:row;
+            flex-wrap:wrap;
+            width: 100%;
+            flex-basis: 70%;
+            max-width: 960px;
+            margin:0 auto;
+            padding: 1em;
+            border-bottom: 5px solid rgb(243, 110, 86);
+       }
+       .container div {
+           margin: 10px;
+       }
+       .container div img {
+           height: 266px;
+           width: 239px;
+           margin: 10px;
+       }
+       .container a {
+           display: flex;
+           flex-direction: row;
+           flex-wrap:wrap;
+           width: 100%;
+           max-width: 960px;
+           margin:0 auto;
+           padding: 1em;
+        }
+        .box:hover {
+            border:1px solid #555;
+            border-radius:5px;
+        }
+       .footer {
+            background-color: rgb(255, 253, 109);
+            padding: 5px;
+            clear: both;
+       }
+       .footer a {
+           text-decoration: none;
+           color: black;
+       }
+       .footer a:hover {
+           font-weight: bolder;
+           font-weight: 900;
+           color: black;
+           background-color: rgb(219, 218, 127);
+           padding-bottom: 20px;
+       }
+       .footer ul li {
+            list-style-type: none;
+            font-size: 18px;
+            margin-right: 20px;
+            line-height:1.5em;
+            color: black;
+            text-align: center;
+       } 
+       @media screen and (max-width: 960px){
+            main{
+                width: auto;
+                padding: 0;
+                float: none;
+            }
+            aside {
+                width: auto;
+                padding: 0;
+                float: none;
+            }
+            input {
+                width: auto;
+                padding: 0;
+                float: none;
+            }
+        }
+   </style>
+</head>
+<body>
+
+    <div id="header">
+        <header>
+            <nav class="navbar">
+                <ul class="">
+                    <li class="listNav1"><a href="#gallery" id="navA" class="first">Feed</a></li>
+                    <li class="listNav2"><a href="#home" id="navA">Home</a></li>
+                    <li class="listNav3"><a href="#aboutWeb" id="navA" class="last">About Web</a></li>
+                    <li><input type="text" id="cari" placeholder="Looking for something?..."></li>
+                </ul>
+            </nav>
+            <div id="jumbotron">
+                <h1 id="home" class="JumbA"><a href="#home">"OOTD"</a></h1>
+            </div>
+        </header>
+           
+    <div id="main">
+        <main id="isi">
+            <!-- Gallery -->
+                <div class="kotakG"> 
+                        <h1>FEED</h1>
+                </div>
+
+                <article>
+                    <div class="container" id="gallery">
+                        <a href="#">
+                            <div class="box box1"><img src="./Gambar/gambar1.png" alt="gambar1"></div>
+                            <div class="box box2"><img src="./Gambar/gambar2.png" alt="gambar2"></div>
+                            <div class="box box3"><img src="./Gambar/gambar3.png" alt="gambar3"></div>
+                            <div class="box box4"><img src="./Gambar/gambar4.png" alt="gambar4"></div>
+                            <div class="box box5"><img src="./Gambar/gambar5.png" alt="gambar5"></div>
+                            <div class="box box6"><img src="./Gambar/gambar6.png" alt="gambar6"></div>
+                            <div class="box box7"><img src="./Gambar/gambar7.png" alt="gambar7"></div>
+                            <div class="box box8"><img src="./Gambar/gambar8.png" alt="gambar8"></div>
+                            <div class="box box9"><img src="./Gambar/gambar9.png" alt="gambar9"></div> 
+                        </a>
+                    </div>
+                </article>
+                <!-- About Web -->
+                <div class="KotakA">
+                    <h1>About Web</h1>
+                </div>
+               
+                <article id="aboutWeb">
+                    <h2>Hello!!</h2>
+                    <p class="textIndent"><cite><strong>Hi ,ini adalah web gallery untuk refrensi OOTD kamu,kami punya banyak refrensi outfit untuk kamu .</strong></cite> Lorem ipsum dolor sit amet consectetur adipisicing elit. At officiis quasi officia molestiae voluptatem hic vel aliquam quisquam earum cupiditate temporibus odio, omnis aperiam voluptates ducimus consequatur dolorum! Quo, maxime? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis assumenda fugit nobis quos a alias explicabo rem harum reprehenderit aliquam, voluptatem minus illum eveniet dolores dicta quaerat voluptates aspernatur iste?</p>
+                    <p class="textIndent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae tenetur rem quidem perferendis autem, exercitationem culpa quaerat velit obcaecati totam dolore dignissimos quis corrupti quasi omnis unde blanditiis iste animi? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente facilis eligendi eos voluptas asperiores ut laboriosam blanditiis officia cumque minima excepturi sit tenetur accusantium id voluptatibus, numquam ullam veritatis quae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatum itaque nesciunt ipsam culpa sunt inventore vitae eaque aliquid doloribus iure facere, eveniet corporis deleniti aut, iste facilis fuga consequuntur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque labore nostrum unde. Ipsa porro voluptates, dolor perspiciatis voluptatibus voluptas, ipsam ad natus cum quidem a sunt veniam, maxime quo placeat?</p>
+                </article>
+               <!-- Aside -->
+                <article id="asideArtikel">
+                    <aside>
+                    <div class="aside">
+                        <h1>Author</h1>
+                        <figure class="potoBio">
+                            <img src="./Gambar/bio.jpg" alt="bio">
+                        </figure>
+                        <pre class="bio">
+                        <ul>
+                            <li>Nama     : Bima Sakti Pramudya Kosasi</li>
+                            <li>birth    : TanjungPinang,22 Oktober</li>
+                            <li>Alamat   : Tanah Baru-Beji,Depok</li>
+                            <li>instgram : <a href="https://www.instagram.com/bimasppp/?hl=id">@bimasppp</a></li>
+                            <li>Email    : <a href="mailto:bimasp22@gmail.com">bimasp22@gmail.com</a></li>
+                        </ul>
+                        </pre>  
+                    </div>
+                    </aside>
+                </article>
+        </main>
+    </div>
+    
+   
+    <!-- footer -->
+    <div id="footer">
+        <footer class="footer">
+            <ul>
+                <li>Thank you for visiting</li>
+                <li><a href="#home">Back to top</a></li>
+            </ul>
+        </footer>
+        
+    </div>
+    
+</body>
+</html>
